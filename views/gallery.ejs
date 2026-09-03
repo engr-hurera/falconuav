@@ -1,0 +1,4 @@
+<%- include('partials/header') %>
+<section class="pagehero"><h1>GALLERY</h1><p>Falcon drone platforms and application visuals.</p></section>
+<section class="section"><div class="gallerygrid"><% drones.forEach(d=>{ %><div><div class="galleryitem"><img src="<%= d.image %>" alt="<%= d.name %>"></div><div class="modeltag"><%= d.name %><br><span class="muted"><%= d.category %></span></div></div><% }) %></div></section>
+<%- include('partials/footer') %>

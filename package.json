@@ -1,0 +1,14 @@
+{
+  "name": "falcon-drones",
+  "version": "1.0.0",
+  "description": "Full-stack Falcon Drones website with Express backend, product pages, quote requests and orders.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

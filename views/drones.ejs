@@ -1,0 +1,4 @@
+<%- include('partials/header') %>
+<section class="pagehero"><h1>OUR DRONES</h1><p>Explore Falcon UAV platforms for solar cleaning and agricultural operations.</p></section>
+<section class="section"><div class="grid4"><% drones.forEach(d=>{ %><article class="card"><div class="droneimg" style="background-image:url('<%= d.image %>')"></div><div class="cardbody"><h3><%= d.name %></h3><div class="cat"><%= d.category %></div><p><%= d.short %></p><a class="btn dark" href="/drones/<%= d.slug %>">VIEW DETAILS</a></div></article><% }) %></div></section>
+<%- include('partials/footer') %>
