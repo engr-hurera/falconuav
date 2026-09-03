@@ -1,4 +1,4 @@
 <%- include('partials/header') %>
-<section class="pagehero"><h1>OUR DRONES</h1><p>Explore Falcon UAV platforms for solar cleaning and agricultural operations.</p></section>
-<section class="section"><div class="grid4"><% drones.forEach(d=>{ %><article class="card"><div class="droneimg" style="background-image:url('<%= d.image %>')"></div><div class="cardbody"><h3><%= d.name %></h3><div class="cat"><%= d.category %></div><p><%= d.short %></p><a class="btn dark" href="/drones/<%= d.slug %>">VIEW DETAILS</a></div></article><% }) %></div></section>
+<section class="page-hero"><div class="container"><div class="eyebrow light">FALCON / UAV PLATFORMS</div><h1>The fleet</h1><p>Solar cleaning and agricultural platforms, each designed around a specific operating requirement.</p></div></section>
+<section class="section"><div class="container"><div class="fleet-grid fleet-grid-all"><% drones.forEach((d, i)=>{ %><a class="fleet-card" href="/drones/<%= d.slug %>"><div class="fleet-image"><img src="<%= d.image %>" alt="<%= d.name %> drone platform" loading="lazy"><span class="card-number"><%= String(i+1).padStart(2,'0') %></span></div><div class="fleet-body"><div><span class="category"><%= d.category %></span><h3><%= d.name %></h3><p><%= d.short %></p></div><span class="arrow">↗</span></div></a><% }) %></div></div></section>
 <%- include('partials/footer') %>

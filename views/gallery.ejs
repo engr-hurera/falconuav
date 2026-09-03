@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
-<section class="pagehero"><h1>GALLERY</h1><p>Falcon drone platforms and application visuals.</p></section>
-<section class="section"><div class="gallerygrid"><% drones.forEach(d=>{ %><div><div class="galleryitem"><img src="<%= d.image %>" alt="<%= d.name %>"></div><div class="modeltag"><%= d.name %><br><span class="muted"><%= d.category %></span></div></div><% }) %></div></section>
+<section class="page-hero"><div class="container"><div class="eyebrow light">FALCON / GALLERY</div><h1>Aircraft, up close.</h1><p>A visual look at the current Falcon platform range.</p></div></section>
+<section class="section"><div class="container gallery-grid"><% drones.forEach((d, i)=>{ %><button class="gallery-card" type="button" onclick="openLightbox('<%= d.image %>','<%= d.name %>')"><div class="gallery-image"><img src="<%= d.image %>" alt="<%= d.name %>" loading="lazy"><span><%= String(i+1).padStart(2,'0') %></span></div><div><b><%= d.name %></b><small><%= d.category %></small></div></button><% }) %></div></section>
+<div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close">×</button><img id="lightboxImage" src="" alt=""><p id="lightboxCaption"></p></div>
 <%- include('partials/footer') %>

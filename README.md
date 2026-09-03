@@ -1,27 +1,40 @@
-# Falcon Drones — Full-Stack Website
+# Falcon Drones — Website
 
-Professional Falcon drone website using Express + EJS.
+A clean, application-led UAV website built with Node.js, Express and EJS.
 
-## Included
-- Falcon black/white/gold theme
-- Six drone product pages
-- Four solar-cleaning drone platforms
-- Two agriculture drone platforms
-- Individual drone imagery (no SVG drone placeholders)
-- Get a Quote form backed by `/api/quote`
-- Buy Now / Order Request form backed by `/api/order`
-- Internal inquiry page at `/admin/inquiries`
-- About, Solutions, Gallery and Contact pages
-- Responsive layout
-- JSON storage for quote and order requests
+## Run locally
 
-## Run
-1. Install Node.js LTS.
-2. Open a terminal in this folder.
-3. Run `npm install`.
-4. Run `npm start`.
-5. Open `http://localhost:3000`.
+```bash
+npm install
+npm start
+```
 
-Quote requests are stored in `data/quotes.json` and order requests in `data/orders.json`.
+Open `http://localhost:3000`.
 
-For production, connect the same API endpoints to MongoDB and add admin authentication before publishing the inquiry dashboard publicly.
+## Railway / GitHub
+
+The app is Railway-friendly:
+
+- `npm start` launches `server.js`.
+- The server reads Railway's `PORT` variable and binds to `0.0.0.0`.
+- No Dockerfile or paid service is required for the website itself.
+- Static assets live in `public/` and EJS pages live in `views/`.
+
+If Railway does not auto-detect the command, set the Start Command to `npm start`.
+
+## Admin inquiries
+
+Set these Railway Variables:
+
+- `ADMIN_USER`
+- `ADMIN_PASSWORD`
+
+Then open `/admin/inquiries`. The page uses HTTP Basic Authentication and is not available when those variables are missing.
+
+## Important data note
+
+Quote/order requests currently use JSON files in `data/`. This is deliberately simple and works for local development, but a hosted filesystem should not be treated as permanent database storage. For production inquiries, connect the API to a managed database such as PostgreSQL or MongoDB.
+
+## Images
+
+All current drone images are kept in `public/images/`. Replace them with your final product photography whenever available; the layout will preserve the image proportions instead of forcing awkward crops on product pages.

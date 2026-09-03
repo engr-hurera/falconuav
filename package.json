@@ -1,14 +1,10 @@
 {
   "name": "falcon-drones",
-  "version": "1.0.0",
-  "description": "Full-stack Falcon Drones website with Express backend, product pages, quote requests and orders.",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Falcon Drones website with Express, EJS and inquiry forms.",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^4.21.2"
-  }
+  "scripts": {"start":"node server.js","dev":"node server.js"},
+  "engines": {"node": ">=20"},
+  "dependencies": {"ejs":"^3.1.10","express":"^4.21.2","express-rate-limit":"^7.5.1","helmet":"^8.1.0"}
 }
